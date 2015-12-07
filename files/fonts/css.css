@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inconsolata'), url(http://fonts.gstatic.com/s/inconsolata/v12/BjAYBlHtW3CJxDcjzrnZCIgp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Inconsolata Bold'), local('Inconsolata-Bold'), url(http://fonts.gstatic.com/s/inconsolata/v12/AIed271kqQlcIRSOnQH0yf79_ZuUxCigM2DespTnFaw.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat-Regular'), url(http://fonts.gstatic.com/s/montserrat/v6/zhcz-_WihjSQC0oHJ9TCYAzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Pathway Gothic One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pathway Gothic One'), local('PathwayGothicOne-Regular'), url(http://fonts.gstatic.com/s/pathwaygothicone/v4/Lqv9ztoTUV8Q0FmQZzPqaHT0-GP0evTJPrdxn7U7ioo.woff2) format('woff2');
+}
