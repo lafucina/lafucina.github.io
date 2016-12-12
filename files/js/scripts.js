@@ -7,7 +7,7 @@ var mr_firstSectionHeight,
     mr_floatingProjectSections,
     mr_scrollTop = 0;
 
-$(document).ready(function() { 
+$(document).ready(function() {
     "use strict";
 
     // Smooth scroll to inner links
@@ -158,17 +158,42 @@ $(document).ready(function() {
 
     // Instagram Feed
 
-    jQuery.fn.spectragram.accessData = {
-        accessToken: '1406933036.fedaafa.feec3d50f5194ce5b705a1f11a107e0b',
-        clientID: 'fedaafacf224447e8aef74872d3820a1'
-    };
+    // jQuery.fn.spectragram.accessData = {
+    // instaToken: '223595357.67fbf55.047ed77aecd44effa5f1addb07630d18',
+    // instaID: ' 67fbf553629e4345ab1f55f34f77e1c3',
+    // };
+    //
+    // $('.instafeed').each(function() {
+    //     $(this).children('ul').spectragram('getUserFeed', {
+    //         query: $(this).attr('data-user-name'),
+    //         max: 12
+    //     });
+    // });
 
-    $('.instafeed').each(function() {
-        $(this).children('ul').spectragram('getUserFeed', {
-            query: $(this).attr('data-user-name'),
-            max: 12
-        });
-    });
+// exmplae spectagram new
+  // var Spectra = {
+  //   instaToken: '223595357.67fbf55.047ed77aecd44effa5f1addb07630d18',
+  //   instaID: ' 67fbf553629e4345ab1f55f34f77e1c3',
+  //
+  //   init: function () {
+  //     $.fn.spectragram.accessData = {
+  //       accessToken: this.instaToken,
+  //       clientID: this.instaID
+  //     };
+  //
+  //     $('.pb0').spectragram('getUserFeed',{
+  //       max: 12,
+  //       query: 'lafucinamsterdam',
+  //       wrapEachWith: '<div class="photo">'
+  //     });
+  //   }
+  // }
+  //
+  // Spectra.init();
+
+
+
+
 
     // Image Sliders
 
@@ -382,7 +407,7 @@ $(document).ready(function() {
         }
         // End contact form code
 
-    // Get referrer from URL string 
+    // Get referrer from URL string
     if (getURLParameter("ref")) {
         $('form.form-email').append('<input type="text" name="referrer" class="hidden" value="' + getURLParameter("ref") + '"/>');
     }
@@ -390,7 +415,7 @@ $(document).ready(function() {
     function getURLParameter(name) {
         return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
     }
-    
+
     // Load Google MAP API JS with callback to initialise when fully loaded
     if(document.querySelector('[data-maps-api-key]') && !document.querySelector('.gMapsAPI')){
         if($('[data-maps-api-key]').length){
@@ -399,10 +424,10 @@ $(document).ready(function() {
             script.type = 'text/javascript';
             script.src = 'https://maps.googleapis.com/maps/api/js?key='+apiKey+'&callback=initializeMaps';
             script.className = 'gMapsAPI';
-            document.body.appendChild(script);  
-        } 
+            document.body.appendChild(script);
+        }
     }
-    
+
 
     $('.toggle-map').click(function(){
     	$(this).closest('.map-holder').find('.contact-details').toggleClass('hide-details');
@@ -411,11 +436,11 @@ $(document).ready(function() {
     });
 
 
-}); 
+});
 
-$(window).load(function() { 
+$(window).load(function() {
     "use strict";
-    
+
     // Navigation
 
     if (!$('nav').hasClass('fixed') && !$('nav').hasClass('absolute')) {
@@ -467,7 +492,7 @@ $(window).load(function() {
     mr_firstSectionHeight = $('.main-container section:nth-of-type(1)').outerHeight(true);
 
 
-}); 
+});
 
 function updateNav() {
 
@@ -564,12 +589,12 @@ window.initializeMaps = function(){
                     if(address != undefined && address[0] != ""){
                             geocoder.geocode( { 'address': address[0].replace('[nomarker]','')}, function(results, status) {
                                 if (status == google.maps.GeocoderStatus.OK) {
-                                var map = new google.maps.Map(mapInstance, mapOptions); 
+                                var map = new google.maps.Map(mapInstance, mapOptions);
                                 map.setCenter(results[0].geometry.location);
-                                
+
                                 address.forEach(function(address){
                                     var markerGeoCoder;
-                                    
+
                                     markerImage = {url: window.mr_variant == undefined ? 'img/mapmarker.png' : '../img/mapmarker.png', size: new google.maps.Size(100,100), scaledSize: new google.maps.Size(100,100)};
                                     if(/(\-?\d+(\.\d+)?),\s*(\-?\d+(\.\d+)?)/.test(address) ){
                                         var latlong = address.split(','),
@@ -604,7 +629,7 @@ window.initializeMaps = function(){
                     }
                     else if(latitude != undefined && latitude != "" && latitude != false && longitude != undefined && longitude != "" && longitude != false ){
                         mapOptions.center   = { lat: latitude, lng: longitude};
-                        map = new google.maps.Map(mapInstance, mapOptions); 
+                        map = new google.maps.Map(mapInstance, mapOptions);
                         marker              = new google.maps.Marker({
                                                     position: { lat: latitude, lng: longitude },
                                                     map: map,
@@ -614,7 +639,7 @@ window.initializeMaps = function(){
 
                     }
 
-                }); 
+                });
         }
     }
 }
